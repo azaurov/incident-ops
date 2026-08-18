@@ -8,8 +8,10 @@ import PostmortemDoc from "../components/PostmortemDoc";
 
 const EMPTY_TRIAGE = { severity: "P1", affectedSystems: "", rootCauseHypothesis: "", escalation: "" };
 
-async function postJson(url, body) {
-  const res = await fetch(url, {
+const API_BASE = import.meta.env.VITE_API_BASE || "";
+
+async function postJson(path, body) {
+  const res = await fetch(API_BASE + path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

@@ -1,0 +1,15 @@
+name = "incident-ops-api"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Set to your GitHub Pages origin after the first deploy, e.g.
+# "https://azaurov.github.io" — restricts which sites may call this API.
+# "*" works too but allows any site to call it.
+[vars]
+ALLOWED_ORIGIN = "https://azaurov.github.io"
+
+# Created via: wrangler kv namespace create SCENARIOS
+# Then paste the returned id below.
+[[kv_namespaces]]
+binding = "SCENARIOS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

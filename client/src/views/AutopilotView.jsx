@@ -5,8 +5,10 @@ import PostmortemDoc from "../components/PostmortemDoc";
 
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
-async function postJson(url, body) {
-  const res = await fetch(url, {
+const API_BASE = import.meta.env.VITE_API_BASE || "";
+
+async function postJson(path, body) {
+  const res = await fetch(API_BASE + path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

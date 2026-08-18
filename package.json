@@ -1,0 +1,12 @@
+{
+  "name": "incident-ops",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm:dev --prefix server\" \"npm:dev --prefix client\"",
+    "install:all": "npm install --prefix server && npm install --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
